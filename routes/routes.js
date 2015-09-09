@@ -1,5 +1,7 @@
 "use strict";
 
+var post = require('./notes/create');
+
 module.exports = function registerRouters(router) {
     router.get('/notes', function (req, res) {
 
@@ -14,6 +16,6 @@ module.exports = function registerRouters(router) {
 
     });
     router.post('/notes', function (req, res) {
-
+        post(req, res);
     });
 };
