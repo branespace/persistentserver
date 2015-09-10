@@ -9,8 +9,7 @@ exports.put = function (req, res) {
         incoming += data;
     });
     req.on('end', function () {
-        var json = JSON.parse(incoming);
-        var body = json.body;
+        var body = incoming;
         var filename = __dirname + '/../../notes/' + utility.getNumber(req.url);
         utility.delete(filename, function (err) {
             if (err) {

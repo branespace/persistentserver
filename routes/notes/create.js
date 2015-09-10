@@ -8,8 +8,7 @@ module.exports = function create(req, res) {
         incoming += data;
     });
     req.on('end', function () {
-        var json = JSON.parse(incoming);
-        var body = json.body;
+        var body = incoming;
         var filename = utility.getNextIndex();
         utility.writeFile(__dirname + '/../../notes/' + filename,
             body, function (err) {
