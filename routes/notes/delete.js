@@ -5,7 +5,6 @@ var utility = require(__dirname + '/../../lib/utility'),
 
 module.exports = function (req, res) {
     var filename = __dirname + '/../../notes/' + utility.getNumber(req.url);
-    console.log('delete' + filename);
     utility.delete(filename, function (err) {
         if (err) {
             return err;

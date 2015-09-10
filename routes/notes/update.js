@@ -12,7 +12,6 @@ exports.put = function (req, res) {
         var json = JSON.parse(incoming);
         var body = json.body;
         var filename = __dirname + '/../../notes/' + utility.getNumber(req.url);
-        console.log(filename);
         utility.delete(filename, function (err) {
             if (err) {
                 return err;
